@@ -1,10 +1,10 @@
 #pragma once
 #include <string>
 
-class Error {
+class Error: public std::exception {
 public:
     Error(const std::string& value);
-    std::string what() const;
+    const char* what() const override;
 
 private:
     std::string _data;

@@ -6,13 +6,11 @@
 
 class Console {
 public:
-
     Console();
 
     void run();
 
 private:
-    int _x;
     std::string _str;
 
 };
