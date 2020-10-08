@@ -10,7 +10,4 @@ public:
 
     void run();
 
-private:
-    std::string _str;
-
 };

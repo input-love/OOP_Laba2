@@ -8,16 +8,43 @@ class Sorting {
 public:
 	Sorting() = default;
 
-	Sorting(const int size, std::string name_file);
+	Sorting(int size, const std::string& name_file);
 
 	virtual ~Sorting();
 
-	virtual void SortArr();
+	virtual void SortArr() = 0;
 
 protected:
-	int* arr = nullptr;
+	int* _arr;
 	const int _n;
 
 	void swap(int i, int i_min);
+
+};
+
+class Choice final: public Sorting {
+public:
+	Choice() = default;
+
+	Choice(int size, const std::string& name_file);
+
+	virtual ~Choice();
+
+	void SortArr() override;
+
+};
+
+class Quick final: public Sorting {
+public:
+	Quick() = default;
+
+	Quick(int size, const std::string& name_file);
+
+	virtual ~Quick();
+
+	void SortArr() override;
+
+private:
+	void QuickCode(int* arr, int n);
 
 };
