@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include <clocale>
-#include "Sort.h"
+#include "Sorting.h"
 #include "Error.h"
 
 class Console {

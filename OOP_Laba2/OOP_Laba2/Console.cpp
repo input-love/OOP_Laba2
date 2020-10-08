@@ -5,7 +5,7 @@ Console::Console() = default;
 void Console::run() {
     setlocale(LC_ALL, "Russian");
     while (true) {
-        int check = 0, size;
+        int check, size;
         do {
             std::cout << "Какую сортировку выбрать?:\n 1. Choice\n 2. Quick" << std::endl;
             std::cin >> check;
