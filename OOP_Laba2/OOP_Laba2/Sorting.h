@@ -13,8 +13,8 @@ public:
 	virtual void SortArr() = 0;
 
 protected:
-	int* _arr;
 	int _n;
+	int* _arr;
 
 	void swap(int i, int i_min);
 
@@ -28,7 +28,7 @@ public:
 
 	~Choice();
 
-	void SortArr() override;
+	void SortArr();
 
 };
 
@@ -40,9 +40,9 @@ public:
 
 	~Quick();
 
-	void SortArr() override;
+	void SortArr();
 
 private:
-	void QuickCode(int* arr, int n);
+	void QuickCode(int n);
 
 };

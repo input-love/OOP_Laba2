@@ -1,4 +1,5 @@
 #include "Sorting.h"
+#include <iostream>
 
 Sorting::Sorting(int size, const std::string& name_file): _n(size), _arr(new int[_n]) {
 	std::ifstream fin(name_file + ".txt");
@@ -31,7 +32,7 @@ Choice::~Choice() {}
 void Choice::SortArr() {
 	for (int i = 0; i < _n - 1; ++i) {
 		int i_min = i;
-		for (int j = i + 1; j < _n - 1; ++j) {
+		for (int j = i + 1; j < _n; ++j) {
 			if (_arr[j] < _arr[i_min]) {
 				i_min = j;
 			}
@@ -47,13 +48,13 @@ Quick::Quick(int size, const std::string& name_file): Sorting(size, name_file) {
 Quick::~Quick() {}
 
 void Quick::SortArr() {
-	QuickCode(_arr, _n);
+	QuickCode(_n);
 }
 
-void Quick::QuickCode(int* _arr, int n) {
+void Quick::QuickCode(int size) {
 	int i = 0;
-	int j = n - 1;
-	int mid = _arr[n / 2];
+	int j = size - 1;
+	int mid = _arr[size / 2];
 	do {
 		while (_arr[i] < mid) {
 			i++;
@@ -62,15 +63,18 @@ void Quick::QuickCode(int* _arr, int n) {
 			j--;
 		}
 		if (i <= j) {
-			swap(i, j);
+			int tmp = _arr[i];
+			_arr[i] = _arr[j];
+			_arr[j] = tmp;
+
 			i++;
 			j--;
 		}
 	} while (i <= j);
 	if (j > 0) {
-		QuickCode(_arr, j + 1);
+		QuickCode(j + 1);
 	}
-	if (i < n) {
-		QuickCode(&_arr[i], n - i);
+	if (i < size) {
+		QuickCode(size - i);
 	}
 }
