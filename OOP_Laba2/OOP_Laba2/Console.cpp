@@ -28,7 +28,7 @@ void Console::run() {
             sort = new Quick(size, str);
             break;
         }
-        sort->SortArr();
+        sort->SortArr(size);
         delete sort;
     } catch (const std::exception& exept) {
         std::cout << exept.what() << std::endl;

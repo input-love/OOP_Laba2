@@ -10,13 +10,12 @@ public:
 
 	virtual ~Sorting();
 
-	virtual void SortArr() = 0;
+	virtual void SortArr(int n) = 0;
 
 protected:
-	int _n;
 	int* _arr;
 
-	void swap(int i, int i_min);
+	void swap(int i, int j);
 
 };
 
@@ -28,7 +27,7 @@ public:
 
 	~Choice();
 
-	void SortArr();
+	void SortArr(int n);
 
 };
 
@@ -40,9 +39,6 @@ public:
 
 	~Quick();
 
-	void SortArr();
-
-private:
-	void QuickCode(int n);
+	void SortArr(int n);
 
 };
