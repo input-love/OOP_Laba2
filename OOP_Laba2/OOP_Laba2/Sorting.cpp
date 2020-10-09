@@ -1,10 +1,10 @@
 #include "Sorting.h"
 #include <iostream>
 
-Sorting::Sorting(int size, const std::string& name_file): _n(size), _arr(new int[_n]) {
+Sorting::Sorting(const int size, const std::string& name_file): _n(size), _arr(new int[_n]) {
 	std::ifstream fin(name_file + ".txt");
 	if (!fin.is_open()) {
-		throw Error("Файл не открылся!");
+		throw Error("Нет такого файла...");
 	} else {
 		for (int i = 0; i < _n; ++i) {
 			fin >> _arr[i];
@@ -25,7 +25,7 @@ void Sorting::swap(int i, int i_min) {
 
 //-------------
 
-Choice::Choice(int size, const std::string& name_file): Sorting(size, name_file) {}
+Choice::Choice(const int size, const std::string& name_file): Sorting(size, name_file) {}
 
 Choice::~Choice() {}
 
@@ -43,7 +43,7 @@ void Choice::SortArr() {
 
 //-------------
 
-Quick::Quick(int size, const std::string& name_file): Sorting(size, name_file) {}
+Quick::Quick(const int size, const std::string& name_file): Sorting(size, name_file) {}
 
 Quick::~Quick() {}
 
@@ -63,10 +63,7 @@ void Quick::QuickCode(int size) {
 			j--;
 		}
 		if (i <= j) {
-			int tmp = _arr[i];
-			_arr[i] = _arr[j];
-			_arr[j] = tmp;
-
+			swap(i, j);
 			i++;
 			j--;
 		}

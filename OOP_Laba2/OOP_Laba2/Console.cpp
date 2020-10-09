@@ -33,6 +33,4 @@ void Console::run() {
     } catch (const std::exception& exept) {
         std::cout << exept.what() << std::endl;
     }
-
-    
 }

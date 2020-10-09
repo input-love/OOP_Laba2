@@ -6,7 +6,7 @@ class Sorting {
 public:
 	Sorting() = default;
 
-	Sorting(int size, const std::string& name_file);
+	Sorting(const int size, const std::string& name_file);
 
 	virtual ~Sorting();
 
@@ -24,7 +24,7 @@ class Choice final: public Sorting {
 public:
 	Choice() = default;
 
-	Choice(int size, const std::string& name_file);
+	Choice(const int size, const std::string& name_file);
 
 	~Choice();
 
@@ -36,7 +36,7 @@ class Quick final: public Sorting {
 public:
 	Quick() = default;
 
-	Quick(int size, const std::string& name_file);
+	Quick(const int size, const std::string& name_file);
 
 	~Quick();
 
