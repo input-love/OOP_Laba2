@@ -1,7 +1,5 @@
 #pragma once
 #include <fstream>
-#include "Choice.h"
-#include "Quick.h"
 #include "Error.h"
 
 class Sorting {
@@ -16,7 +14,7 @@ public:
 
 protected:
 	int* _arr;
-	const int _n;
+	int _n;
 
 	void swap(int i, int i_min);
 
@@ -28,7 +26,7 @@ public:
 
 	Choice(int size, const std::string& name_file);
 
-	virtual ~Choice();
+	~Choice();
 
 	void SortArr() override;
 
@@ -40,7 +38,7 @@ public:
 
 	Quick(int size, const std::string& name_file);
 
-	virtual ~Quick();
+	~Quick();
 
 	void SortArr() override;
 

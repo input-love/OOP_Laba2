@@ -17,25 +17,22 @@ void Console::run() {
     std::cin >> str;
     std::cout << "Сколько элементов в очереди?: " << std::endl;
     std::cin >> size;
-
+    
     try {
+        Sorting* sort = nullptr;
         switch (check) {
         case 1: 
-            {
-                Sorting* sort = new Choice(size, str);
-                sort->SortArr();
-                delete sort;
-            }
+            sort = new Choice(size, str);
             break;
-        case 2: 
-            {
-                Sorting* sort = new Quick(size, str);
-                sort->SortArr();
-                delete sort;
-            }
+        case 2:
+            sort = new Quick(size, str);
             break;
         }
+        sort->SortArr();
+        delete sort;
     } catch (const std::exception& exept) {
         std::cout << exept.what() << std::endl;
     }
+
+    
 }

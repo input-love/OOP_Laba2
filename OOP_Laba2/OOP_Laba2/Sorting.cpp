@@ -5,19 +5,15 @@ Sorting::Sorting(int size, const std::string& name_file): _n(size), _arr(new int
 	if (!fin.is_open()) {
 		throw Error("Файл не открылся!");
 	} else {
-		int x;
 		for (int i = 0; i < _n; ++i) {
-			fin >> x;
-			//fin >> *(_arr + i);
+			fin >> _arr[i];
 		}
 	}
 	fin.close();
 }
 
 Sorting::~Sorting() {
-	if (_arr) {
-		delete[] _arr;
-	}
+	delete[] _arr;
 }
 
 void Sorting::swap(int i, int i_min) {
@@ -35,7 +31,7 @@ Choice::~Choice() {}
 void Choice::SortArr() {
 	for (int i = 0; i < _n - 1; ++i) {
 		int i_min = i;
-		for (int j = i + 1; j < _n; ++j) {
+		for (int j = i + 1; j < _n - 1; ++j) {
 			if (_arr[j] < _arr[i_min]) {
 				i_min = j;
 			}

@@ -1,5 +1,5 @@
 ﻿#include "Console.h"
-//#include <vld.h>
+#include <vld.h>
 
 int main() {
     Console console;
