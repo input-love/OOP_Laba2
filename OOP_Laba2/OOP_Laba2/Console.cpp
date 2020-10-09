@@ -4,39 +4,35 @@ Console::Console() = default;
 
 void Console::run() {
     setlocale(LC_ALL, "Russian");
-    while (true) {
-        int check = 0, size;
-        do {
-            std::cout << "Какую сортировку выбрать?:\n 1. Choice\n 2. Quick" << std::endl;
-            std::cin >> check;
-        } while (check < 1 || check > 2);
 
-        std::cout << "Название файла: " << std::endl;
-        std::cin >> _str;
-        std::cout << "Сколько элементво в очереди?: " << std::endl;
-        std::cin >> size;
+    std::string str;
+    int check, size;
 
+    do {
+        std::cout << "Какую сортировку выбрать?:\n 1. Choice\n 2. Quick" << std::endl;
+        std::cin >> check;
+    } while (check < 1 || check > 2);
+
+    std::cout << "Название файла: " << std::endl;
+    std::cin >> str;
+    std::cout << "Сколько элементов в очереди?: " << std::endl;
+    std::cin >> size;
+    
+    try {
+        Sorting* sort = nullptr;
         switch (check) {
-        case 1:
-            try {
-                Choice choice(check, _str);
-                Sorting* sort = &choice;
-                sort->SortArr();
-            }
-            catch (const Error& err) {
-                std::cout << err.what() << std::endl;
-            }
+        case 1: 
+            sort = new Choice(size, str);
             break;
         case 2:
-            try {
-                Quick quick(check, _str);
-                Sorting* sort = &quick;
-                sort->SortArr();
-            }
-            catch (const Error& err) {
-                std::cout << err.what() << std::endl;
-            }
+            sort = new Quick(size, str);
             break;
         }
+        sort->SortArr();
+        delete sort;
+    } catch (const std::exception& exept) {
+        std::cout << exept.what() << std::endl;
     }
+
+    
 }
