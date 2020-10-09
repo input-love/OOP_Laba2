@@ -9,9 +9,9 @@ void Console::run() {
     int check, size;
 
     do {
-        std::cout << "Какую сортировку выбрать?:\n 1. Choice\n 2. Quick" << std::endl;
+        std::cout << "Какую сортировку выбрать?:\n 0. Choice\n 1. Quick" << std::endl;
         std::cin >> check;
-    } while (check < 1 || check > 2);
+    } while (check < 0 || check > 1);
 
     std::cout << "Название файла: " << std::endl;
     std::cin >> str;
@@ -20,13 +20,10 @@ void Console::run() {
     
     try {
         Sorting* sort = nullptr;
-        switch (check) {
-        case 1: 
+        if (!check) {
             sort = new Choice(size, str);
-            break;
-        case 2:
+        } else {
             sort = new Quick(size, str);
-            break;
         }
         sort->SortArr(size);
         delete sort;
