@@ -12,12 +12,12 @@ public:
 
 	virtual void SortArr(int n) = 0;
 
-	void coutInFile(int n);
+	void coutInFile(const int n) const;
 
 protected:
 	int* _arr;
 
-	void swap(int i, int j);
+	void swap(const int i, const int j);
 
 };
 

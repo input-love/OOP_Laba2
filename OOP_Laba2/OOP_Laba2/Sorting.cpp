@@ -18,14 +18,14 @@ Sorting::~Sorting() {
 	delete[] _arr;
 }
 
-void Sorting::coutInFile(int n) {
+void Sorting::coutInFile(const int n) const {
 	std::ofstream fout("sort_array.txt");
 	for (int i = 0; i < n; ++i) {
 		fout << _arr[i] << "\n";
 	}
 }
 
-void Sorting::swap(int i, int j) {
+void Sorting::swap(const int i, const int j) {
 	int a = _arr[i];
 	_arr[i] = _arr[j];
 	_arr[j] = a;
