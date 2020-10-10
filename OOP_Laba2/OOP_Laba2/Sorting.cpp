@@ -6,7 +6,9 @@ Sorting::Sorting(const int size, const std::string& name_file): _arr(new int[siz
 		throw Error("Нет такого файла...");
 	} else {
 		for (int i = 0; i < size; ++i) {
-			fin >> _arr[i];
+			if (!(fin >> _arr[i])) {
+				throw Error("Недопустимое количество элементов...");
+			}
 		}
 	}
 	fin.close();
@@ -14,6 +16,13 @@ Sorting::Sorting(const int size, const std::string& name_file): _arr(new int[siz
 
 Sorting::~Sorting() {
 	delete[] _arr;
+}
+
+void Sorting::coutInFile(int n) {
+	std::ofstream fout("sort_array.txt");
+	for (int i = 0; i < n; ++i) {
+		fout << _arr[i] << "\n";
+	}
 }
 
 void Sorting::swap(int i, int j) {

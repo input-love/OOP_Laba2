@@ -12,6 +12,8 @@ public:
 
 	virtual void SortArr(int n) = 0;
 
+	void coutInFile(int n);
+
 protected:
 	int* _arr;
 
