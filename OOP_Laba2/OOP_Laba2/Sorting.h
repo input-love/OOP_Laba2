@@ -1,6 +1,6 @@
 #pragma once
-#include "Error.h"
 #include "ArrayOfNumber.h"
+#include <algorithm>
 
 class Sorting {
 public:
@@ -8,6 +8,6 @@ public:
 
 	virtual ~Sorting();
 
-	virtual void SortArr(const ArrayOfNumber& array_num, int n) = 0;
+	virtual void SortArr(const ArrayOfNumber& arr, int size) const = 0;
 
 };

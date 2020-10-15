@@ -5,6 +5,6 @@ class Choice final : public Sorting {
 public:
 	Choice();
 
-	void SortArr(const ArrayOfNumber& array_num, int n);
+	void SortArr(const ArrayOfNumber& arr, int size) const;
 
 };

@@ -2,10 +2,10 @@
 
 Choice::Choice() = default;
 
-void Choice::SortArr(const ArrayOfNumber& arr, int n) {
-	for (int i = 0; i < n - 1; ++i) {
+void Choice::SortArr(const ArrayOfNumber& arr, int size) const {
+	for (int i = 0; i < size - 1; ++i) {
 		int i_min = i;
-		for (int j = i + 1; j < n; ++j) {
+		for (int j = i + 1; j < size; ++j) {
 			if (arr[j] < arr[i_min]) {
 				i_min = j;
 			}
