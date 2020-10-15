@@ -1,46 +1,24 @@
 #pragma once
-#include <fstream>
+#include "ScanFile.h"
+#include "PrintFile.h"
 #include "Error.h"
 
 class Sorting {
 public:
-	Sorting() = default;
+	Sorting();
 
-	Sorting(const int size, const std::string& name_file);
+	Sorting(int size, const std::string& name_file);
 
 	virtual ~Sorting();
 
 	virtual void SortArr(int n) = 0;
 
-	void coutInFile(const int n) const;
+	void outInFile(int n) const;
 
 protected:
-	int* _arr;
+	ScanFile* scan_file;
+	PrintFile* print_file;
 
-	void swap(const int i, const int j);
-
-};
-
-class Choice final: public Sorting {
-public:
-	Choice() = default;
-
-	Choice(const int size, const std::string& name_file);
-
-	~Choice();
-
-	void SortArr(int n);
-
-};
-
-class Quick final: public Sorting {
-public:
-	Quick() = default;
-
-	Quick(const int size, const std::string& name_file);
-
-	~Quick();
-
-	void SortArr(int n);
+	void swap(int* arr, int i, int j) const;
 
 };

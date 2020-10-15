@@ -2,10 +2,10 @@
 
 Console::Console() = default;
 
-void Console::run() {
+void Console::run() const {
     setlocale(LC_ALL, "Russian");
 
-    std::string str;
+    std::string name_file;
     int check, size;
 
     do {
@@ -14,19 +14,19 @@ void Console::run() {
     } while (check < 0 || check > 1);
 
     std::cout << "Название файла: " << std::endl;
-    std::cin >> str;
-    std::cout << "Сколько элементов в очереди?: " << std::endl;
+    std::cin >> name_file;
+    std::cout << "Сколько элементов считать с файла?: " << std::endl;
     std::cin >> size;
     
     try {
         Sorting* sort = nullptr;
         if (!check) {
-            sort = new Choice(size, str);
+            sort = new Choice(size, name_file);
         } else {
-            sort = new Quick(size, str);
+            sort = new Quick(size, name_file);
         }
         sort->SortArr(size);
-        sort->coutInFile(size);
+        sort->outInFile(size);
         delete sort;
     } catch (const std::exception& exept) {
         std::cout << exept.what() << std::endl;
