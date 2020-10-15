@@ -10,5 +10,5 @@ public:
 	void SortArr(int n);
 
 private:
-	void SortArrCode(int* arr, int n);
+	void SortArrCode(int* arr, int n) const;
 };

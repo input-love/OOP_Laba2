@@ -12,9 +12,9 @@ public:
 
 	~ScanFile();
 	
-	void Recording(int size, const std::string& name_file);
+	void Recording(int size, const std::string& name_file) const;
 
-	int* GetArray();
+	int* GetArray() const;
 
 private:
 	ArrayOfNumber* array_num;

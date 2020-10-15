@@ -5,7 +5,7 @@
 
 class Sorting {
 public:
-	Sorting() = default;
+	Sorting();
 
 	Sorting(int size, const std::string& name_file);
 
@@ -19,6 +19,6 @@ protected:
 	ScanFile* scan_file;
 	PrintFile* print_file;
 
-	void swap(int* arr, int i, int j);
+	void swap(int* arr, int i, int j) const;
 
 };

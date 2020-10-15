@@ -10,6 +10,6 @@ class Console {
 public:
     Console();
 
-    void run();
+    void run() const;
 
 };

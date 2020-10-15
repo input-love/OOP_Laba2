@@ -8,7 +8,7 @@ void Quick::SortArr(int n) {
 	SortArrCode(scan_file->GetArray(), n);
 }
 
-void Quick::SortArrCode(int* arr, int n) {
+void Quick::SortArrCode(int* arr, int n) const {
 	int i = 0;
 	int j = n - 1;
 	int mid = arr[n / 2];

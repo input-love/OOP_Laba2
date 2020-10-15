@@ -8,7 +8,7 @@ ScanFile::~ScanFile() {
 	delete array_num;
 }
 
-void ScanFile::Recording(int size, const std::string& name_file) {
+void ScanFile::Recording(int size, const std::string& name_file) const {
 	std::ifstream fin(name_file);
 	if (!fin.is_open()) {
 		throw Error("Íåò òàêîãî ôàéëà...");
@@ -23,6 +23,6 @@ void ScanFile::Recording(int size, const std::string& name_file) {
 	fin.close();
 }
 
-int* ScanFile::GetArray() {
+int* ScanFile::GetArray() const {
 	return array_num->_arr;
 }

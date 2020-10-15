@@ -8,7 +8,7 @@ public:
 
 	~ArrayOfNumber();
 
-	int& operator [] (int i);
+	int& operator [] (int i) const;
 
 	int _size;
 	int* _arr;
