@@ -10,6 +10,7 @@ public:
 
 	int& operator [] (int i) const;
 
+private:
 	int _size;
 	int* _arr;
 

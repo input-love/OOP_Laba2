@@ -1,11 +1,12 @@
 #pragma once
 #include <fstream>
+#include "ArrayOfNumber.h"
 #include "Error.h"
 
 class PrintFile {
 public:
 	PrintFile();
 
-	void outFile(int* _arr, int n) const;
+	void outFile(const ArrayOfNumber& arr, int n) const;
 
 };

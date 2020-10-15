@@ -2,13 +2,7 @@
 
 Quick::Quick() = default;
 
-Quick::Quick(int size, const std::string& name_file) : Sorting(size, name_file) {}
-
-void Quick::SortArr(int n) {
-	SortArrCode(scan_file->GetArray(), n);
-}
-
-void Quick::SortArrCode(int* arr, int n) const {
+void Quick::SortArr(const ArrayOfNumber& arr, int n) {
 	int i = 0;
 	int j = n - 1;
 	int mid = arr[n / 2];
@@ -20,15 +14,15 @@ void Quick::SortArrCode(int* arr, int n) const {
 			j--;
 		}
 		if (i <= j) {
-			swap(arr, i, j);
+			std::swap(arr[i], arr[j]);
 			i++;
 			j--;
 		}
 	} while (i <= j);
 	if (j > 0) {
-		SortArrCode(arr, j + 1);
+		SortArr(arr, j + 1);
 	}
 	if (i < n) {
-		SortArrCode(arr, n - i);
+		SortArr(arr, n - i);
 	}
 }
