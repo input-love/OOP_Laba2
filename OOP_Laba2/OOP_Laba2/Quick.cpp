@@ -1,5 +1,7 @@
 #include "Quick.h"
 
+Quick::Quick() = default;
+
 Quick::Quick(int size, const std::string& name_file) : Sorting(size, name_file) {}
 
 void Quick::SortArr(int n) {

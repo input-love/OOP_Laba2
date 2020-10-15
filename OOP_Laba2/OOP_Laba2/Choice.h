@@ -3,7 +3,7 @@
 
 class Choice final : public Sorting {
 public:
-	Choice() = default;
+	Choice();
 
 	Choice(int size, const std::string& name_file);
 

@@ -7,12 +7,16 @@
 class ScanFile {
 public:
 	ScanFile();
+
+	ScanFile(int size);
+
+	~ScanFile();
 	
 	void Recording(int size, const std::string& name_file);
 
 	int* GetArray();
 
 private:
-	ArrayOfNumber* array_num = nullptr;
+	ArrayOfNumber* array_num;
 
 };

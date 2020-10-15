@@ -3,7 +3,7 @@
 
 class Quick final : public Sorting {
 public:
-	Quick() = default;
+	Quick();
 
 	Quick(int size, const std::string& name_file);
 

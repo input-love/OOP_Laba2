@@ -1,5 +1,7 @@
 #include "Choice.h"
 
+Choice::Choice() = default;
+
 Choice::Choice(int size, const std::string& name_file): Sorting(size, name_file) {}
 
 void Choice::SortArr(int n) {
