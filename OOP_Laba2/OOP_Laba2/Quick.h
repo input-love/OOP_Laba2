@@ -5,10 +5,6 @@ class Quick final : public Sorting {
 public:
 	Quick();
 
-	Quick(int size, const std::string& name_file);
+	void SortArr(const ArrayOfNumber& arr, int size) const;
 
-	void SortArr(int n);
-
-private:
-	void SortArrCode(int* arr, int n) const;
 };

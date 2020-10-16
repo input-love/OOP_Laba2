@@ -2,9 +2,9 @@
 
 PrintFile::PrintFile() = default;
 
-void PrintFile::outFile(int* arr, int n) const {
+void PrintFile::outFile(const ArrayOfNumber& arr, int size) const {
 	std::ofstream fout("sort_array.txt");
-	for (int i = 0; i < n; ++i) {
+	for (int i = 0; i < size; ++i) {
 		fout << arr[i] << "\n";
 	}
 }

@@ -2,7 +2,7 @@
 
 Console::Console() = default;
 
-void Console::run() const {
+void Console::run() {
     setlocale(LC_ALL, "Russian");
 
     std::string name_file;
@@ -17,16 +17,21 @@ void Console::run() const {
     std::cin >> name_file;
     std::cout << "Сколько элементов считать с файла?: " << std::endl;
     std::cin >> size;
-    
+
     try {
+        ArrayOfNumber arr(size);
+        ScanFile scan_file;
+        scan_file.Recording(arr, size, name_file);
+        PrintFile print_file;
+
         Sorting* sort = nullptr;
         if (!check) {
-            sort = new Choice(size, name_file);
+            sort = new Choice;
         } else {
-            sort = new Quick(size, name_file);
+            sort = new Quick;
         }
-        sort->SortArr(size);
-        sort->outInFile(size);
+        sort->SortArr(arr, size);
+        print_file.outFile(arr, size);
         delete sort;
     } catch (const std::exception& exept) {
         std::cout << exept.what() << std::endl;

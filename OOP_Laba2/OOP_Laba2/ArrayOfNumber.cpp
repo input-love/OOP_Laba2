@@ -1,8 +1,8 @@
 #include "ArrayOfNumber.h"
 
-ArrayOfNumber::ArrayOfNumber(): _size(100), _arr(new int[_size]) {}
+ArrayOfNumber::ArrayOfNumber(): _arr(new int[1000]) {}
 
-ArrayOfNumber::ArrayOfNumber(int n): _size(n), _arr(new int[_size]) {}
+ArrayOfNumber::ArrayOfNumber(int size): _arr(new int[size]) {}
 
 ArrayOfNumber::~ArrayOfNumber() {
 	delete[] _arr;

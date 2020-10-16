@@ -4,13 +4,13 @@ class ArrayOfNumber {
 public:
 	ArrayOfNumber();
 
-	ArrayOfNumber(int n);
+	ArrayOfNumber(int size);
 
 	~ArrayOfNumber();
 
 	int& operator [] (int i) const;
 
-	int _size;
+private:
 	int* _arr;
 
 };
