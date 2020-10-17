@@ -7,4 +7,5 @@ void PrintFile::outFile(const ArrayOfNumber& arr, int size) const {
 	for (int i = 0; i < size; ++i) {
 		fout << arr[i] << "\n";
 	}
+	fout.close();
 }

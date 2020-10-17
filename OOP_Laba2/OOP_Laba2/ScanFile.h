@@ -2,7 +2,6 @@
 #include "ArrayOfNumber.h"
 #include "Error.h"
 #include <fstream>
-#include <string>
 
 class ScanFile {
 public:
